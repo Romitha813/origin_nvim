@@ -1,0 +1,22 @@
+<leader>r -- run current file
+
+<leader>ut -- undo tree
+
+<C-a> or ggvG -- select all
+
+<A-left> -- home
+<A-right> -- end
+
+<C-left> or <C-right> -- jump word by word
+
+gg -- page up
+G -page down
+
+<A-v> -- hilight current word
+<leader>d -- delete from clipboard
+<leader>y -- copy to clipboard
+<leader>p -- paste from clipboard
+
+<leader>p -- clipboard
+
+<C-s> or :w -- save file

@@ -54,37 +54,15 @@ vim.opt.swapfile = false -- Stop creating .swp files
 
 -----
 ---
-vim.diagnostic.config({ update_in_insert = true })
-
----
----
----
----
--- Add this to lua/config/options.lua
-vim.diagnostic.config({
-  update_in_insert = true, -- Real-time errors while typing
-  virtual_text = {
-    spacing = 4,
-    prefix = "●",
-  },
-  severity_sort = true,
-})
-----
----
----
----
--- Add this to AppData/Local/nvim/lua/config/options.lua
+-- AppData/Local/nvim/lua/config/options.lua
 
 vim.diagnostic.config({
   update_in_insert = true, -- Real-time updates as you type
-  underline = true, -- Underline the actual error code
-  severity_sort = true, -- Show errors before warnings
-  virtual_text = { -- The text at the end of the line
-    spacing = 4,
-    source = "if_many", -- Shows "jdtls" or "pyright" so you know the source
-    prefix = "●",
-  },
-  float = { -- The popup window when you hover
+  underline = true, -- Underline the error in code
+  severity_sort = true, -- Sort by severity (Error > Warn)
+  virtual_text = false, -- Disable native end-of-line text (plugin handles this)
+  virtual_lines = true, -- SHOW ALL ERRORS globally on their own lines
+  float = {
     border = "rounded",
     source = "always",
   },

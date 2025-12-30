@@ -1,18 +1,21 @@
+-- AppData/Local/nvim/lua/plugins/errorchecking.lua
 return {
   {
     "rachartier/tiny-inline-diagnostic.nvim",
-    event = "LspAttach", -- Changed from VeryLazy to LspAttach
+    event = "LspAttach",
     priority = 1000,
     config = function()
       require("tiny-inline-diagnostic").setup({
         options = {
-          throttle = 0, -- Set to 0 for instant real-time feedback
-          show_source = true,
+          throttle = 0, -- Instant feedback
+          show_source = true, -- Show if it's jdtls, clangd, etc.
           add_messages = true,
+          multilines = {
+            enabled = true,
+            always_show = true, -- This makes EVERY error in the file visible
+          },
         },
       })
-      -- This is the most important line:
-      vim.diagnostic.config({ virtual_text = false })
     end,
   },
 }
